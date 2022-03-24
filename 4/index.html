@@ -21,8 +21,9 @@
         const names = ['Adam', 'Marek', 'Basia', 'Kasia', 'Janek', 'Tomek']
 
         names.forEach(name => {
-            console.log(name)
-            // WTF?!
+            debugger 
+            console.log(name, "dd")
+            // WTF?! problem przez lib-4 ; zmieniono metodę w prototypie
         })
 
         const state = {
@@ -30,8 +31,10 @@
             maxDiff: 'easy',
             mapName: 'de-dust'
         }
-
-        console.log(Object.values(state).length) // WTF?!
+        console.log(Object.values)
+        debugger
+        console.log(Object.values(state).length, "cos") // WTF?! 
+        `in lib-7 to Object.values is assigned another function. `
     </script>
 </body>
 </html>
