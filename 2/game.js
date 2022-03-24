@@ -21,8 +21,27 @@ class RockPaperScissors {
         }
 
         console.log(`Current score - P1: ${this.p1Wins} P2: ${this.p2Wins}\n`)
+    } 
+    save(){
+        return JSON.stringify({
+            p1Wins: this.p1Wins,
+            p2Wins: this.p2Wins
+        });
     }
-
+    load(status){
+      try {
+          const { p1Wins, p2Wins } = JSON.parse(status);
+          if( typeof p1Wins === 'number' && typeof p2Wins ==='number' ){
+            this.p1Wins = p1Wins
+            this.p2Wins = p2Wins 
+            return this;
+          }else{
+              throw("p1Wins and p2Wins mmust be number values.")
+            }
+      }catch(err){
+        throw(err.message)
+      }
+    }
     checkWinningPair(d1, d2) {
         const winningMoves = {
             rock: 'scissors',

@@ -6,7 +6,7 @@ game.move('scissors', 'scissors')
 game.move('paper', 'scissors')
 game.move('paper', 'rock')
 
-const storedGame = JSON.stringify(game)
-const loadedGame = JSON.parse(storedGame)
+const storedGame = game.save()
+const loadedGame = game.load(storedGame)
 
-loadedGame.move('paper', 'scissors')
+loadedgame.move('paper', 'scissors')
